@@ -24,7 +24,7 @@ public class LoginActivityViewModel extends AndroidViewModel {
     public LoginActivityViewModel(@NonNull Application application) {
         super(application);
         context = getApplication();
-        
+
     }
 
 
