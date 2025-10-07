@@ -11,8 +11,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.inmo.MainActivity;
-import com.example.inmo.models.Usuario;
-import com.example.inmo.R;
 import com.example.inmo.request.ApiClient;
 
 import retrofit2.Call;
@@ -22,19 +20,13 @@ import retrofit2.Response;
 public class LoginActivityViewModel extends AndroidViewModel {
 
     private Context context;
-    private MutableLiveData<Usuario> userMutable;
     private MutableLiveData<String> errorMutable;
     public LoginActivityViewModel(@NonNull Application application) {
         super(application);
         context = getApplication();
     }
 
-    public LiveData<Usuario> getUserMutableLiveData() {
-        if (userMutable == null) {
-            userMutable = new MutableLiveData<>();
-        }
-        return userMutable;
-    }
+
     public LiveData<String> getErrorMutableLiveData() {
         if (errorMutable == null) {
             errorMutable = new MutableLiveData<>();
@@ -73,23 +65,5 @@ public class LoginActivityViewModel extends AndroidViewModel {
             }
         });
 
-
-
-
-
-//        if ( email.equals("123") && password.equals("123")) {
-//            Usuario usuario = new Usuario();
-//            usuario.setEmail(email);
-//            usuario.setPassword(password);
-//            usuario.setNombre("Franco");
-//            usuario.setFoto(R.drawable.foto1);
-//
-//            Intent intent = new Intent(getApplication(), MainActivity.class);
-//            intent.putExtra("User", usuario);
-//            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-//            getApplication().startActivity(intent);
-//        }else{
-//            errorMutable.setValue("Usuario o contraseña incorrectos");
-//        }
     }
 }
