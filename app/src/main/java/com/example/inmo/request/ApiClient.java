@@ -3,9 +3,12 @@ package com.example.inmo.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.inmo.models.Inmueble;
 import com.example.inmo.models.Propietario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -19,7 +22,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public class ApiClient {
-    private static String BASE_URL="https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
+    public final static String BASE_URL="https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
 
 
 
@@ -45,6 +48,12 @@ public class ApiClient {
 
         @PUT("api/Propietarios/actualizar")
         Call<Propietario> editPropietario(@Header("Authorization") String token, @Body Propietario propietario);
+
+        @GET("api/Inmuebles")
+        Call<List<Inmueble>> getInmueble(@Header("Authorization") String token);
+
+        @PUT("api/Inmuebles/actualizar")
+        Call<Inmueble> updateInmueble(@Header("Authorization") String token, @Body Inmueble inmueble);
 
     }
 
