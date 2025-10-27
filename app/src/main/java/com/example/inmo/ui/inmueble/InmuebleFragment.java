@@ -1,5 +1,6 @@
 package com.example.inmo.ui.inmueble;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.example.inmo.MainActivity;
+import com.example.inmo.R;
 import com.example.inmo.databinding.FragmentInmuebleBinding;
 import com.example.inmo.models.Inmueble;
 
@@ -44,6 +47,20 @@ public class InmuebleFragment extends Fragment {
             }
 
         });
+
+        binding.btnAgregarInmueble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController((Activity) getContext(), R.id.nav_host_fragment_content_main).navigate(R.id.crearFragment);
+            }
+        });
+//        binding.btnAgregarInmueble.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                androidx.navigation.Navigation.findNavController(v).navigate(R.id.crearFragment);
+//            }
+//        });
+
         viewModel.getInmueble();
         return root;
     }

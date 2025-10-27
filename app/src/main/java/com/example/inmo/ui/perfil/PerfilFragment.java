@@ -1,5 +1,6 @@
 package com.example.inmo.ui.perfil;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.example.inmo.R;
 import com.example.inmo.databinding.FragmentPerfilBinding;
 
 public class PerfilFragment extends Fragment {
@@ -66,6 +69,13 @@ public class PerfilFragment extends Fragment {
                 binding.etDni.setText(propietario.getDni());
                 binding.etTelefono.setText(propietario.getTelefono());
                 binding.etEmail.setText(propietario.getEmail());
+            }
+        });
+
+        binding.btnPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController((Activity) getContext(), R.id.nav_host_fragment_content_main).navigate(R.id.passwordFragment);
             }
         });
 

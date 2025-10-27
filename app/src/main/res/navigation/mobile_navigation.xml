@@ -15,7 +15,11 @@
         android:id="@+id/nav_perfil"
         android:name="com.example.inmo.ui.perfil.PerfilFragment"
         android:label="@string/perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_inmueble"
@@ -25,6 +29,9 @@
         <action
             android:id="@+id/action_nav_inmueble_to_detalleInmueble"
             app:destination="@id/detalleInmueble" />
+        <action
+            android:id="@+id/action_nav_inmueble_to_crearFragment"
+            app:destination="@id/crearFragment" />
     </fragment>
 
     <fragment
@@ -51,5 +58,23 @@
         <action
             android:id="@+id/action_detalleInmueble_to_nav_inmueble"
             app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearFragment"
+        android:name="com.example.inmo.ui.inmueble.CrearInmuebleFragment"
+        android:label="Crear Inmueble"
+        tools:layout="@layout/fragment_crear_inmueble" >
+        <action
+            android:id="@+id/action_crearFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.example.inmo.ui.perfil.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" >
+        <action
+            android:id="@+id/action_passwordFragment_to_nav_perfil"
+            app:destination="@id/nav_perfil" />
     </fragment>
 </navigation>
