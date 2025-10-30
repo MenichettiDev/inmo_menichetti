@@ -56,4 +56,33 @@ public MutableLiveData<List<Inmueble>> listaInmuebleMutable = new MutableLiveDat
         });
 
     }
+    //Probando metodos para los demas fragment
+
+    public void getInmuebleConContrato(){
+        String token = ApiClient.leerToken(getApplication());
+        ApiClient.InmoServicio servicio = ApiClient.getInmoServicio();
+        Call<List<Inmueble>> listaInmueble = servicio.getInmueble("Bearer " + token);
+
+        listaInmueble.enqueue(new retrofit2.Callback<List<Inmueble>>() {
+            @Override
+            public void onResponse(Call<List<Inmueble>> call, retrofit2.Response<List<Inmueble>> response) {
+                if(response.isSuccessful()) {
+
+                    listaInmuebleMutable.postValue(response.body());
+
+                }else{
+                    Log.d("InmuebleViewModel", "Error al obtener el inmueble: " + response.code());
+                    Toast.makeText(getApplication(), "Error al obtener el inmueble", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Inmueble>> call, Throwable t) {
+                Log.d("errorInmueble",t.getMessage());
+
+                Toast.makeText(getApplication(),"Error al obtener Inmuebles",Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
 }

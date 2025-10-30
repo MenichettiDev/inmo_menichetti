@@ -54,12 +54,6 @@ public class InmuebleFragment extends Fragment {
                 Navigation.findNavController((Activity) getContext(), R.id.nav_host_fragment_content_main).navigate(R.id.crearFragment);
             }
         });
-//        binding.btnAgregarInmueble.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                androidx.navigation.Navigation.findNavController(v).navigate(R.id.crearFragment);
-//            }
-//        });
 
         viewModel.getInmueble();
         return root;

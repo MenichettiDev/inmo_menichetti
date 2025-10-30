@@ -80,7 +80,7 @@ public class CrearInmuebleFragment extends Fragment {
         String latitud = binding.etLatitud.getText().toString();
         String longitud = binding.etLongitud.getText().toString();
         String valor = binding.etValor.getText().toString();
-        boolean disponible = true;
+        boolean disponible = false;
 
         mViewModel.guardarInmueble(ambientes, superficie, direccion, uso, tipo, latitud, longitud, valor, disponible);
 

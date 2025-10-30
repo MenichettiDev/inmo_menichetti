@@ -74,6 +74,7 @@ public class CrearInmuebleViewModel extends AndroidViewModel {
             inmueblelleno.setLatitud(Double.parseDouble(latitud));
             inmueblelleno.setLongitud(Double.parseDouble(longitud));
             inmueblelleno.setValor(Double.parseDouble(valor.toString()));
+            inmueblelleno.setDisponible(false);
             //Convertir la imagen a bits
             byte imagenBytes[] = transformarImagen();
             if( imagenBytes.length == 0 ){

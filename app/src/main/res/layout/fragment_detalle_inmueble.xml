@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvCodigo"
+        android:id="@+id/tvCodigoPago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -37,12 +37,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="503"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCodigoPago" />
 
     <TextView
         android:id="@+id/tvAmbientes"
@@ -61,7 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="3"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.938"
@@ -85,7 +83,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="Salta 325"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"
@@ -109,7 +106,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="$17000.0"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -133,7 +129,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="particular"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
@@ -169,7 +164,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:enabled="false"
-        android:text="casa"
         android:textColor="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.103"

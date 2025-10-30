@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.contratos.DetalleContratoFragment">
+
+    <TextView
+        android:id="@+id/tvTituloContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Información del Contrato"
+        android:textColor="#9C27B0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ID Contrato -->
+
+    <TextView
+        android:id="@+id/tvIdContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:text="ID Contrato"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloContrato" />
+
+    <TextView
+        android:id="@+id/tvIdInquilinoContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:text="ID Inquilino"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbEstadoContrato" />
+
+    <EditText
+        android:id="@+id/etFechaFinalizacion"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaFinalizacion" />
+
+    <EditText
+        android:id="@+id/etFechaInicio"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaInicio" />
+
+    <EditText
+        android:id="@+id/etIdInmuebleContrato"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdInmuebleContrato" />
+
+    <EditText
+        android:id="@+id/etIdInquilinoContrato"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdInquilinoContrato" />
+
+    <EditText
+        android:id="@+id/etMonto"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonto" />
+
+    <TextView
+        android:id="@+id/tvFechaFinalizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:text="Fecha de Finalización"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaInicio" />
+
+    <TextView
+        android:id="@+id/tvMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:text="Monto del Alquiler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaFinalizacion" />
+
+    <TextView
+        android:id="@+id/tvIdInmuebleContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:text="ID Inmueble"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdInquilinoContrato" />
+
+    <CheckBox
+        android:id="@+id/cbEstadoContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:checked="true"
+        android:text="Activo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMonto" />
+
+    <TextView
+        android:id="@+id/tvFechaInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="5dp"
+        android:text="Fecha de Inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdContrato" />
+
+    <EditText
+        android:id="@+id/etIdContrato"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:enabled="false"
+        android:textColor="#9C27B0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdContrato" />
+
+
+    <Button
+        android:id="@+id/btnPagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="Ver pagos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
