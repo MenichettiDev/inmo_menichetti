@@ -1,4 +1,4 @@
-package com.example.inmo.ui.inmueble;
+package com.example.inmo.ui.contrato;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,37 +17,32 @@ import com.bumptech.glide.Glide;
 import com.example.inmo.R;
 import com.example.inmo.models.Inmueble;
 import com.example.inmo.request.ApiClient;
+import com.example.inmo.ui.inmueble.InmuebleAdapter;
+import com.example.inmo.ui.inquilino.InquilinoAdapter;
 
 import java.util.List;
 
-public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHolderInmueble> {
+public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.ViewHolderContrato>{
 
     private List<Inmueble> listado;
     private Context context;
     private LayoutInflater li;
-    private int destinoNav;
 
-    public InmuebleAdapter(List<Inmueble> listado, Context context, LayoutInflater li) {
+    public ContratoAdapter(List<Inmueble> listado, Context context, LayoutInflater li) {
         this.listado = listado;
         this.context = context;
         this.li = li;
-    }
-    public InmuebleAdapter(List<Inmueble> listado, Context context, LayoutInflater li, int destinoNav) {
-        this.listado = listado;
-        this.context = context;
-        this.li = li;
-        this.destinoNav = destinoNav;
     }
 
     @NonNull
     @Override
-    public ViewHolderInmueble onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ContratoAdapter.ViewHolderContrato onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = li.inflate(R.layout.item_inmueble, parent, false);
-        return new ViewHolderInmueble(itemView);
+        return new ContratoAdapter.ViewHolderContrato(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderInmueble holder, int position) {
+    public void onBindViewHolder(@NonNull ContratoAdapter.ViewHolderContrato holder, int position) {
         Inmueble inmueble = listado.get(position);
         holder.direccion.setText("Direccion: " + inmueble.getDireccion());
         holder.precio.setText("Precio: " + inmueble.getValor()+"");
@@ -58,12 +53,13 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
                 .placeholder(null)
                 .error("null")
                 .into(holder.foto);
-        ((ViewHolderInmueble) holder).itemView.setOnClickListener(new View.OnClickListener() {
+        ((ContratoAdapter.ViewHolderContrato) holder).itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("inmueble", inmueble);
-                Navigation.findNavController((Activity)context, R.id.nav_host_fragment_content_main ).navigate(R.id.detalleInmueble, bundle);
+                bundle.putSerializable("idInmueble", inmueble.getIdInmueble());
+                Navigation.findNavController(view).navigate(R.id.detalleContratoFragment, bundle);
             }
         });
     }
@@ -73,10 +69,10 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
         return listado.size() ;
     }
 
-    public class ViewHolderInmueble extends RecyclerView.ViewHolder{
+    public class ViewHolderContrato extends RecyclerView.ViewHolder{
         TextView direccion,precio;
         ImageView foto;
-        public ViewHolderInmueble(@NonNull View itemView) {
+        public ViewHolderContrato(@NonNull View itemView) {
             super(itemView);
             direccion = itemView.findViewById(R.id.txtDireccion);
             precio = itemView.findViewById(R.id.txtValor);

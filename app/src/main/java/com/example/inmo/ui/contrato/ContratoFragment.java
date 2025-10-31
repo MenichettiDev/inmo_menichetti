@@ -7,32 +7,44 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inmo.R;
+import com.example.inmo.databinding.FragmentContratoBinding;
+import com.example.inmo.ui.inmueble.InmuebleAdapter;
 
 public class ContratoFragment extends Fragment {
 
-    private ContratoViewModel mViewModel;
+    private FragmentContratoBinding binding;
+    private ContratoViewModel vm;
 
-    public static ContratoFragment newInstance() {
-        return new ContratoFragment();
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        vm = new ViewModelProvider(this).get(ContratoViewModel.class);
+        binding = FragmentContratoBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        vm.getListaContratos().observe(getViewLifecycleOwner(), inmuebles -> {
+            ContratoAdapter adapter = new ContratoAdapter(
+                    inmuebles, getContext(), getLayoutInflater()
+            );
+            GridLayoutManager glm = new GridLayoutManager(getContext(), 2);
+            binding.lista.setLayoutManager(glm);
+            binding.lista.setAdapter(adapter);
+        });
+
+        vm.obtenerContratos();
+        return root;
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_contrato, container, false);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ContratoViewModel.class);
-        // TODO: Use the ViewModel
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
 }

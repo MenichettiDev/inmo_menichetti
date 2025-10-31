@@ -103,16 +103,16 @@
             android:id="@+id/action_detalleContratoFragment_to_nav_contrato"
             app:destination="@id/nav_contrato" />
         <action
-            android:id="@+id/action_detalleContratoFragment_to_detallePagosFragment"
-            app:destination="@id/detallePagosFragment" />
+            android:id="@+id/action_detalleContratoFragment_to_pagoFragment"
+            app:destination="@id/pagoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detallePagosFragment"
-        android:name="com.example.inmo.ui.contrato.detallePagosFragment"
-        android:label="fragment_detalle_pagos"
-        tools:layout="@layout/fragment_detalle_pagos" >
+        android:id="@+id/pagoFragment"
+        android:name="com.example.inmo.ui.pago.PagoFragment"
+        android:label="fragment_pago"
+        tools:layout="@layout/fragment_pago" >
         <action
-            android:id="@+id/action_detallePagosFragment_to_detalleContratoFragment"
+            android:id="@+id/action_pagoFragment_to_detalleContratoFragment"
             app:destination="@id/detalleContratoFragment" />
     </fragment>
 </navigation>
