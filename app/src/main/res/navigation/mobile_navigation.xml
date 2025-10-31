@@ -79,7 +79,7 @@
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.example.inmo.ui.perfil.PasswordFragment"
-        android:label="fragment_password"
+        android:label="Cambio de password"
         tools:layout="@layout/fragment_password" >
         <action
             android:id="@+id/action_passwordFragment_to_nav_perfil"
